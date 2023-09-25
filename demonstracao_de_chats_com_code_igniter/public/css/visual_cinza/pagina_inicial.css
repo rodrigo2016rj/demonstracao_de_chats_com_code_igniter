@@ -1,0 +1,43 @@
+#h2_titulo_da_pagina{
+  margin-right: auto;
+  margin-left: auto;
+  width: 600px;
+  max-width: 100%;
+  color: #707070;
+  font-size: 26pt;
+}
+@media(max-width: 640px){
+  #h2_titulo_da_pagina{
+    font-size: 18pt;
+  }
+}
+#div_instrucoes_do_sistema{
+  margin-top: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 600px;
+  max-width: 100%;
+  color: #424242;
+  font-size: 14pt;
+}
+@media(max-width: 640px){
+  #div_instrucoes_do_sistema{
+    margin-top: 44px;
+    font-size: 12pt;
+  }
+}
+#div_instrucoes_do_sistema>p{
+  margin-top: 26px;
+  line-height: 28px;
+  text-indent: 70px;
+}
+@media(max-width: 640px){
+  #div_instrucoes_do_sistema>p{
+    margin-top: 18px;
+    line-height: 22px;
+    text-indent: 35px;
+  }
+}
+#div_instrucoes_do_sistema>p:first-child{
+  margin-top: 0px;
+}

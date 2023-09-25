@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="/css/{$visual_template}/template.css" type="text/css" rel="stylesheet"/>
+    <script src="/js/jQuery 3.7.1 Comprimido.js"></script>
+    <script src="/js/template/interacoes.js"></script>
+    {block name=head_especifico}{/block}
+  </head>
+  <body>
+    <div id="div_cabecalho_template">
+      <h1 id="h1_titulo_do_sistema_template">
+        <span>Demonstração de Chats</span>
+      </h1>
+      <nav id="nav_menu_01_template">
+        <div id="div_opcoes_do_menu_01_template">
+          <a id="link_pagina_inicial_template" class="opcao_do_menu_01" 
+             href="./pagina_inicial">Início</a>
+          <a id="link_chat_ajax_reverso_template" class="opcao_do_menu_01" 
+             href="./chat_ajax_reverso">Ajax Reverso</a>
+          <a id="link_chat_web_socket_template" class="opcao_do_menu_01" 
+             href="./chat_web_socket">Web Socket</a>
+        </div>
+      </nav>
+    </div>
+    <div id="div_tronco_template">
+      {block name=tronco}{/block}
+    </div>
+    <div id="div_rodape_template">
+      <div id="div_autor_do_sistema_template">
+        <span>Este sistema foi feito por Rodrigo Diniz da Silva.</span>
+      </div>
+      <div id="div_tecnologias_do_sistema_template">
+        <span>Este sistema usa PHP, CodeIgniter, Smarty e JQuery.</span>
+      </div>
+    </div>
+  </body>
+</html>

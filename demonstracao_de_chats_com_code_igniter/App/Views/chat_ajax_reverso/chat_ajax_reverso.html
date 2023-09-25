@@ -1,0 +1,46 @@
+{extends file='../template.html'}
+{block name=head_especifico}
+<link href="/css/{$visual_template}/chat_ajax_reverso.css" type="text/css" rel="stylesheet"/>
+<script src="/js/chat_ajax_reverso/ajax.js"></script>
+<script src="/js/chat_ajax_reverso/interacoes.js"></script>
+<title>Chat Ajax Reverso</title>
+{/block}
+
+{block name=tronco}
+<div id="div_chat_ajax_reverso">
+  <h2 id="h2_titulo_da_pagina">
+    <span>Chat Feito com Ajax Reverso</span>
+  </h2>
+  <div id="div_enviar_mensagem">
+    <div id="div_nova_mensagem">
+      <div id="div_label_mensagem">
+        <label id="label_mensagem" for="campo_mensagem">
+          <span>Mensagem</span>
+        </label>
+      </div>
+      <div id="div_campo_mensagem">
+        <textarea id="campo_mensagem" name="mensagem" maxlength="400" autocomplete="off"></textarea>
+      </div>
+    </div>
+    <div id="div_botao_enviar_mensagem">
+      <input type="hidden" id="campo_anti_csrf" name="chave_anti_csrf" value="{$chave_anti_csrf}"/>
+      <button type="button" id="botao_enviar_mensagem">Enviar</button>
+    </div>
+  </div>
+  <div id="div_mensagens">
+    {if $pagina_atual_das_mensagens}
+    <div id="div_paginacao_de_cima_da_lista_de_mensagens">
+      {include file='chat_ajax_reverso/paginacao_das_mensagens.html'}
+    </div>
+    {/if}
+    <div id="div_lista_de_mensagens">
+      {include file='chat_ajax_reverso/mensagens_do_chat.html'}
+    </div>
+    {if $pagina_atual_das_mensagens}
+    <div id="div_paginacao_de_baixo_da_lista_de_mensagens">
+      {include file='chat_ajax_reverso/paginacao_das_mensagens.html'}
+    </div>
+    {/if}
+  </div>
+</div>
+{/block}

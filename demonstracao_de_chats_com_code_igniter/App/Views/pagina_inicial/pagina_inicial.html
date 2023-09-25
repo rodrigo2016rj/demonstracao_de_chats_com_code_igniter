@@ -1,0 +1,45 @@
+{extends file='../template.html'}
+{block name=head_especifico}
+<link href="/css/{$visual_template}/pagina_inicial.css" type="text/css" rel="stylesheet"/>
+<title>Página Inicial</title>
+{/block}
+{block name=tronco}
+<h2 id="h2_titulo_da_pagina">
+  <span>Página Inicial</span>
+</h2>
+<div id="div_instrucoes_do_sistema">
+  <p>
+    Este sistema demonstra o resultado de algumas formas de fazer chat que eu implementei faz alguns 
+    anos. Selecione qual chat deseja ver o resultado pelo menu do cabeçalho do sistema.
+  </p>
+  <p>
+    Para ver o chat funcionando: Abra duas abas no seu navegador com o mesmo tipo de chat, depois 
+    envie uma mensagem por meio de uma das abas, em seguida vá na outra aba e veja que a mensagem 
+    aparece sem ter que atualizar a página.
+  </p>
+  <p>
+    No primeiro link, <a href="./chat_ajax_reverso">Ajax Reverso</a>, o sistema mostra o resultado 
+    do chat feito utilizando long polling que consiste em uma requisição ajax normal para uma função 
+    PHP que não responde de imediato.
+  </p>
+  <p>
+    A função PHP que criei para isso dei o nome de carregar_chat_ajax_reverso, esta possui um loop 
+    que só desarma quando detecta que há uma nova modificação em um arquivo txt (arquivo de texto).
+  </p>
+  <p>
+    No segundo link, <a href="./chat_web_socket">Web Socket</a>, o sistema mostra o resultado do 
+    chat feito com Web Sockets. Eu fiz um arquivo que chamei de manipulador_de_web_sockets.php e 
+    para utilizar é necessário ter a extensão sockets (ou php_sockets) ativada no php.ini, ir na 
+    pasta App\Libraries deste sistema e executar o comando:
+  </p>
+  <p>
+    php -q manipulador_de_web_sockets.php
+  </p>
+  <p>
+    Este arquivo vai manipular as conexões de websocket no lado do servidor (backend), decodificando 
+    o que é recebido pelo servidor e codificando o que é enviado pelo servidor. Além disso possui um 
+    loop que identifica qual dos sockets está com informação e envia a informação deste socket para 
+    todos os outros conectados.
+  </p>
+</div>
+{/block}

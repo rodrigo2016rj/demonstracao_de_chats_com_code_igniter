@@ -1,0 +1,17 @@
+{foreach $mensagens as $mensagem}
+<div class="mensagem">
+  <div class="momento_da_mensagem">
+    <span>{$mensagem['enviada_em']}</span>
+    {if $mensagem['editada_em'] !== null}
+    <span>(Editada em: {$mensagem['editada_em']})</span>
+    {/if}
+  </div>
+  <div class="autor_e_texto_da_mensagem">
+    {$mensagem['autor_e_texto_da_mensagem']}
+  </div>
+</div>
+{foreachelse}
+<div id="div_quando_nao_ha_mensagens">
+	<span id="span_quando_nao_ha_mensagens">Nenhuma mensagem ainda.</span>
+</div>
+{/foreach}

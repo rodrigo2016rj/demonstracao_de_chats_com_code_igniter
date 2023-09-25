@@ -1,0 +1,29 @@
+<a class="primeira_pagina" href="/chat_web_socket?pagina=1">Primeira</a>
+{if $pagina_atual_das_mensagens > 1}
+  <a class="pagina_anterior" href="/chat_web_socket?pagina={$pagina_atual_das_mensagens - 1}">Anterior</a>
+{else}
+  <a class="pagina_anterior" href="/chat_web_socket?pagina=1">Anterior</a>
+{/if}
+{for $pagina_das_mensagens=1 to $ultima_pagina_das_mensagens}
+  {if $pagina_das_mensagens < $pagina_atual_das_mensagens - 3}
+    {continue}
+  {/if}
+  {if $pagina_das_mensagens != 1 and $pagina_das_mensagens == $pagina_atual_das_mensagens - 3}
+    <span>...</span>
+  {/if}
+  {if $pagina_das_mensagens > $pagina_atual_das_mensagens + 3}
+    <span>...</span>
+    {break}
+  {/if}
+  {if $pagina_das_mensagens == $pagina_atual_das_mensagens}
+    <a class="pagina_selecionada" href="/chat_web_socket?pagina={$pagina_das_mensagens}">{$pagina_das_mensagens}</a>
+  {else}
+    <a class="pagina" href="/chat_web_socket?pagina={$pagina_das_mensagens}">{$pagina_das_mensagens}</a>
+  {/if}
+{/for}
+{if $pagina_atual_das_mensagens < $ultima_pagina_das_mensagens}
+  <a class="pagina_seguinte" href="/chat_web_socket?pagina={$pagina_atual_das_mensagens + 1}">Seguinte</a>
+{else}
+  <a class="pagina_seguinte" href="/chat_web_socket?pagina={$ultima_pagina_das_mensagens}">Seguinte</a>
+{/if}
+<a class="ultima_pagina" href="/chat_web_socket?pagina={$ultima_pagina_das_mensagens}">Última</a>

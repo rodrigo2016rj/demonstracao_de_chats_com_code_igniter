@@ -1,0 +1,196 @@
+#div_chat_ajax_reverso{
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0px 20px;
+  width: calc(900px - 40px);
+  max-width: calc(100% - 40px);
+}
+@media(max-width: 640px){
+  #div_chat_ajax_reverso{
+    padding: 0px;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+#h2_titulo_da_pagina{
+  margin-right: auto;
+  margin-left: auto;
+  width: 600px;
+  max-width: 100%;
+  color: #707070;
+  font-size: 26pt;
+  text-align: center;
+}
+@media(max-width: 640px){
+  #h2_titulo_da_pagina{
+    font-size: 18pt;
+  }
+}
+
+/* Nova Mensagem */
+#div_enviar_mensagem{
+  margin-top: 40px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 525px;
+  max-width: 100%;
+}
+#div_nova_mensagem{
+  text-align: center;
+}
+#div_label_mensagem{
+  text-align: left;
+}
+#div_campo_mensagem{
+  margin-top: 2px;
+}
+#campo_mensagem{
+  width: calc(525px - 2px - 10px);
+  max-width: calc(100% - 2px - 10px);
+  height: calc(200px - 2px - 8px);
+}
+#div_botao_enviar_mensagem{
+  margin-top: 22px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 525px;
+  max-width: 100%;
+  text-align: right;
+}
+
+/* Mensagens */
+#div_mensagens{
+  margin-top: 22px;
+}
+#div_paginacao_de_cima_da_lista_de_mensagens{
+  margin-top: 10px;
+  max-width: 100%;
+  font-size: 12pt;
+  text-align: center;
+  word-spacing: 2px;
+}
+@media(max-width: 640px){
+  #div_paginacao_de_cima_da_lista_de_mensagens{
+    position: relative;
+    padding-bottom: 10px;
+    font-size: 11pt;
+    white-space: nowrap;
+    overflow: auto;
+    z-index: 1;
+  }
+}
+#div_paginacao_de_baixo_da_lista_de_mensagens{
+  margin-top: 6px;
+  max-width: 100%;
+  font-size: 12pt;
+  text-align: center;
+  word-spacing: 2px;
+}
+@media(max-width: 640px){
+  #div_paginacao_de_baixo_da_lista_de_mensagens{
+    position: relative;
+    padding-bottom: 10px;
+    font-size: 11pt;
+    white-space: nowrap;
+    overflow: auto;
+    z-index: 1;
+  }
+}
+.primeira_pagina,
+.primeira_pagina:visited{
+  display: inline-block;
+  padding: 2px 3px;
+  vertical-align: top;
+  color: #585890;
+}
+.primeira_pagina:hover{
+  background-color: #7070B0;
+  color: #F8F8F8;
+  text-decoration: none;
+}
+.pagina_anterior,
+.pagina_anterior:visited{
+  display: inline-block;
+  padding: 2px 3px;
+  vertical-align: top;
+  color: #585890;
+}
+.pagina_anterior:hover{
+  background-color: #7070B0;
+  color: #F8F8F8;
+  text-decoration: none;
+}
+.pagina,
+.pagina:visited{
+  display: inline-block;
+  padding: 2px 3px;
+  vertical-align: top;
+  color: #585890;
+}
+.pagina:hover{
+  background-color: #7070B0;
+  color: #F8F8F8;
+  text-decoration: none;
+}
+.pagina_selecionada,
+.pagina_selecionada:visited{
+  display: inline-block;
+  padding: 2px 3px;
+  vertical-align: top;
+  color: #585890;
+  text-shadow: 1px 0px 0px #585890;
+}
+.pagina_selecionada:hover{
+  background-color: #7070B0;
+  color: #F8F8F8;
+  text-decoration: none;
+}
+.pagina_seguinte,
+.pagina_seguinte:visited{
+  display: inline-block;
+  padding: 2px 3px;
+  vertical-align: top;
+  color: #585890;
+}
+.pagina_seguinte:hover{
+  background-color: #7070B0;
+  color: #F8F8F8;
+  text-decoration: none;
+}
+.ultima_pagina,
+.ultima_pagina:visited{
+  display: inline-block;
+  padding: 2px 3px;
+  vertical-align: top;
+  color: #585890;
+}
+.ultima_pagina:hover{
+  background-color: #7070B0;
+  color: #F8F8F8;
+  text-decoration: none;
+}
+#div_lista_de_mensagens{
+  margin-right: auto;
+  margin-left: auto;
+  border: 2px solid #C8C8C8;
+  padding: 10px 10px 35px 10px;
+  width: calc(525px - 4px - 20px);
+  max-width: calc(100% - 4px - 20px);
+  min-height: 400px;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+.mensagem{
+  margin-top: 35px;
+  border-top: 1px solid #B0B0B0;
+  padding-top: 10px;
+}
+.mensagem:first-child{
+  margin-top: 0px;
+  border-top: none;
+  padding-top: 0px;
+}
+.autor_e_texto_da_mensagem{
+  margin-top: 25px;
+  line-height: 22px;
+}
