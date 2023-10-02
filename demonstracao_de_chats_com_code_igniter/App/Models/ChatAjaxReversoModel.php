@@ -6,6 +6,7 @@ use App\Models\PrimordialModel;
 use App\Models\Entidades\Usuario;
 use App\Models\Entidades\ChatMensagem;
 use App\Models\Entidades\MensagemHistorico;
+use CodeIgniter\Database\RawSql;
 
 final class ChatAjaxReversoModel extends PrimordialModel{
 
@@ -117,7 +118,7 @@ mensagem_historico.momento_da_mensagem');
 
     $sql = '(SELECT fk_chat_mensagem, MAX(momento_da_mensagem) AS momento_da_mensagem 
 FROM mensagem_historico GROUP BY fk_chat_mensagem) ultima_mensagem';
-    $builder->join($sql, 'ultima_mensagem.fk_chat_mensagem = mensagem_historico.fk_chat_mensagem', 'INNER');
+    $builder->join(new RawSql($sql), 'ultima_mensagem.fk_chat_mensagem = mensagem_historico.fk_chat_mensagem', 'INNER');
 
     $builder->where('mensagem_historico.momento_da_mensagem = ultima_mensagem.momento_da_mensagem');
 

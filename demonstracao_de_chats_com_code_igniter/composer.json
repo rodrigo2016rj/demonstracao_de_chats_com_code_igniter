@@ -10,22 +10,15 @@
   "keywords": ["CodeIgniter", "Smarty", "jQuery", "Chat"],
   "license": "MIT",
   "require": {
-    "php": "^7.3 || ^8.0",
-    "codeigniter4/framework": "4.1.9"
+    "php": "^7.4 || ^8.0",
+    "codeigniter4/framework": "^4.0"
   },
   "require-dev": {
     "fakerphp/faker": "^1.9",
     "mikey179/vfsstream": "^1.6",
     "phpunit/phpunit": "^9.1"
   },
-  "suggest": {
-    "ext-fileinfo": "Improves mime type detection for files"
-  },
   "autoload": {
-    "psr-4": {
-      "App\\": "app",
-      "Config\\": "app/Config"
-    },
     "exclude-from-classmap": [
       "**/Database/Migrations/**"
     ]
@@ -35,12 +28,12 @@
       "Tests\\Support\\": "tests/_support"
     }
   },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
   "scripts": {
     "test": "phpunit"
-  },
-  "support": {
-    "forum": "http://forum.codeigniter.com/",
-    "source": "https://github.com/codeigniter4/CodeIgniter4",
-    "slack": "https://codeigniterchat.slack.com"
   }
 }
