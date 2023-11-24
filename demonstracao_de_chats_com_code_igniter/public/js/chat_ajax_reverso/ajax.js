@@ -6,20 +6,20 @@ $(document).ready(function(){
   const $div_mensagem_do_sistema = $("#div_mensagem_do_sistema");
   const $span_mensagem_do_sistema = $("#span_mensagem_do_sistema");
   const $campo_anti_csrf = $("#campo_anti_csrf");
-	const $botao_enviar_mensagem = $("#botao_enviar_mensagem");
+  const $botao_enviar_mensagem = $("#botao_enviar_mensagem");
   const $div_paginacao_de_cima_da_lista_de_mensagens = $("#div_paginacao_de_cima_da_lista_de_mensagens");
   const $div_lista_de_mensagens = $("#div_lista_de_mensagens");
   const $div_paginacao_de_baixo_da_lista_de_mensagens = $("#div_paginacao_de_baixo_da_lista_de_mensagens");
   
-	$botao_enviar_mensagem.click(function(){
-		let mensagem = $campo_mensagem.val();
+  $botao_enviar_mensagem.click(function(){
+    let mensagem = $campo_mensagem.val();
     let chave_anti_csrf = $campo_anti_csrf.val();
     
     $.ajax({
-			url: "/chat_ajax_reverso/enviar_mensagem_ajax",
-			type: "POST",
-			data: {mensagem: mensagem, chave_anti_csrf: chave_anti_csrf},
-			success: function(resposta){
+      url: "/chat_ajax_reverso/enviar_mensagem_ajax",
+      type: "POST",
+      data: {mensagem: mensagem, chave_anti_csrf: chave_anti_csrf},
+      success: function(resposta){
         if(typeof resposta.mensagem_de_falha != "undefined"){
           $div_mensagem_do_sistema.removeClass("tag_oculta");
           $span_mensagem_do_sistema.text(resposta.mensagem_de_falha);
@@ -32,10 +32,10 @@ $(document).ready(function(){
         $div_paginacao_de_baixo_da_lista_de_mensagens.html(resposta.paginacao);
         $div_lista_de_mensagens.animate({scrollTop: 0}, 175, "swing");
         $campo_mensagem.val("");
-			},
-			dataType:"json"
-		});
-	});
+      },
+      dataType:"json"
+    });
+  });
   
   function atualizar_chat(){
     $.ajax({

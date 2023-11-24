@@ -4,7 +4,7 @@ $(document).ready(function(){
   const $div_mensagem_do_sistema = $("#div_mensagem_do_sistema");
   const $span_mensagem_do_sistema = $("#span_mensagem_do_sistema");
   const $campo_anti_csrf = $("#campo_anti_csrf");
-	const $botao_enviar_mensagem = $("#botao_enviar_mensagem");
+  const $botao_enviar_mensagem = $("#botao_enviar_mensagem");
   const $div_paginacao_de_cima_da_lista_de_mensagens = $("#div_paginacao_de_cima_da_lista_de_mensagens");
   const $div_lista_de_mensagens = $("#div_lista_de_mensagens");
   const $div_paginacao_de_baixo_da_lista_de_mensagens = $("#div_paginacao_de_baixo_da_lista_de_mensagens");
@@ -51,14 +51,14 @@ $(document).ready(function(){
       return;
     }
     
-		let mensagem = $campo_mensagem.val();
+    let mensagem = $campo_mensagem.val();
     let chave_anti_csrf = $campo_anti_csrf.val();
     
-		$.ajax({
-			url: "/chat_web_socket/enviar_mensagem_ajax",
-			type: "POST",
-			data: {mensagem: mensagem, chave_anti_csrf: chave_anti_csrf},
-			success: function(resposta){
+    $.ajax({
+      url: "/chat_web_socket/enviar_mensagem_ajax",
+      type: "POST",
+      data: {mensagem: mensagem, chave_anti_csrf: chave_anti_csrf},
+      success: function(resposta){
         if(typeof resposta.mensagem_de_falha != "undefined"){
           $div_mensagem_do_sistema.removeClass("tag_oculta");
           $span_mensagem_do_sistema.text(resposta.mensagem_de_falha);
@@ -68,10 +68,10 @@ $(document).ready(function(){
         $span_mensagem_do_sistema.text("");
         web_socket.send("Atualizações no chat!");
         $campo_mensagem.val("");
-			},
-			dataType:"json"
-		});
-	});
+      },
+      dataType:"json"
+    });
+  });
   
   /* Paginação ajax da lista de mensagens */
   $div_paginacao_de_cima_da_lista_de_mensagens.on("click", "a", function(evento){
