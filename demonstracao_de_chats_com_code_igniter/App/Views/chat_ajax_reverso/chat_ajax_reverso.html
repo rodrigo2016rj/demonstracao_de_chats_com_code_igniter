@@ -19,8 +19,11 @@
         </label>
       </div>
       <div id="div_campo_mensagem">
-        <textarea id="campo_mensagem" name="mensagem" maxlength="400" autocomplete="off"></textarea>
+        <textarea id="campo_mensagem" name="mensagem" autocomplete="off"></textarea>
       </div>
+    </div>
+    <div id="div_mensagem_do_sistema" class="tag_oculta">
+      <span id="span_mensagem_do_sistema"></span>
     </div>
     <div id="div_botao_enviar_mensagem">
       <input type="hidden" id="campo_anti_csrf" name="chave_anti_csrf" value="{$chave_anti_csrf}"/>
@@ -28,19 +31,19 @@
     </div>
   </div>
   <div id="div_mensagens">
-    {if $pagina_atual_das_mensagens}
     <div id="div_paginacao_de_cima_da_lista_de_mensagens">
+    {if $pagina_atual_das_mensagens}
       {include file='chat_ajax_reverso/paginacao_das_mensagens.html'}
-    </div>
     {/if}
+    </div>
     <div id="div_lista_de_mensagens">
       {include file='chat_ajax_reverso/mensagens_do_chat.html'}
     </div>
-    {if $pagina_atual_das_mensagens}
     <div id="div_paginacao_de_baixo_da_lista_de_mensagens">
+    {if $pagina_atual_das_mensagens}
       {include file='chat_ajax_reverso/paginacao_das_mensagens.html'}
-    </div>
     {/if}
+    </div>
   </div>
 </div>
 {/block}

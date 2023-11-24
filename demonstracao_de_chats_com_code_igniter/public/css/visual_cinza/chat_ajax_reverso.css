@@ -49,6 +49,12 @@
   max-width: calc(100% - 2px - 10px);
   height: calc(200px - 2px - 8px);
 }
+#div_mensagem_do_sistema{
+  margin-top: 20px;
+}
+#span_mensagem_do_sistema{
+  color: #900000;
+}
 #div_botao_enviar_mensagem{
   margin-top: 22px;
   margin-right: auto;

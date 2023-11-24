@@ -190,22 +190,22 @@ final class ChatWebSocketController extends TemplateController{
     /* Validações */
     $chaves_anti_csrf = $this->get_sessao()->get('chaves_anti_csrf_da_pagina_chat_web_socket');
     if(!in_array($chave_anti_csrf, $chaves_anti_csrf)){
-      $mensagem = 'A página expirou. Por meio do navegador recarregue esta página e tente novamente.';
-      $retorno['mensagem_de_falha'] = $mensagem;
+      $aviso = 'A página expirou. Por meio do navegador recarregue esta página e tente novamente.';
+      $retorno['mensagem_de_falha'] = $aviso;
       echo json_encode($retorno);
       die;
     }
     if($texto_da_mensagem === ''){
-      $mensagem = 'O campo mensagem precisa ser preenchido.';
-      $retorno['mensagem_de_falha'] = $texto_da_mensagem;
+      $aviso = 'O campo mensagem precisa ser preenchido.';
+      $retorno['mensagem_de_falha'] = $aviso;
       echo json_encode($retorno);
       die;
     }
     $maximo = $mensagem_historico->quantidade_maxima_de_caracteres('texto_da_mensagem');
     $quantidade = mb_strlen($texto_da_mensagem);
     if($quantidade > $maximo){
-      $mensagem = "O campo mensagem não pode ultrapassar $maximo caracteres.";
-      $retorno['mensagem_de_falha'] = $mensagem;
+      $aviso = "O campo mensagem não pode ultrapassar $maximo caracteres.";
+      $retorno['mensagem_de_falha'] = $aviso;
       echo json_encode($retorno);
       die;
     }
