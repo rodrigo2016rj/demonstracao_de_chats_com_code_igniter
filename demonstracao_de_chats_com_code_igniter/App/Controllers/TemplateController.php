@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use Smarty;
+use Smarty\Smarty;
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
@@ -19,6 +19,8 @@ class TemplateController extends Controller{
     $this->sessao = session();
 
     $this->smarty = new Smarty();
+    $this->smarty->setTemplateDir(APPPATH.'Views/');
+    $this->smarty->setCompileDir(APPPATH.'Views/views_cache_smarty/');
 
     $this->smarty->assign('visual_template', 'visual_cinza');
   }

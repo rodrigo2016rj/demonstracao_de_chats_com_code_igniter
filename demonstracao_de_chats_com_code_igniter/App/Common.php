@@ -13,5 +13,3 @@
  *
  * @see: https://codeigniter.com/user_guide/extending/common.html
  */
-
-define('ENVIRONMENT', 'development');

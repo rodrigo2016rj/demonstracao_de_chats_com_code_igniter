@@ -1,3 +1,6 @@
+# Ambiente
+SetEnv CI_ENVIRONMENT development
+
 # Disable directory browsing
 Options -Indexes
 
@@ -45,5 +48,5 @@ Options -Indexes
 </IfModule>
 
 # Disable server signature start
-	ServerSignature Off
+ServerSignature Off
 # Disable server signature end

@@ -4,7 +4,7 @@ namespace Config;
 
 use CodeIgniter\Config\AutoloadConfig;
 
-/**
+/*
  * -------------------------------------------------------------------
  * AUTOLOADER CONFIGURATION
  * -------------------------------------------------------------------
@@ -22,7 +22,7 @@ use CodeIgniter\Config\AutoloadConfig;
  */
 
 class Autoload extends AutoloadConfig{
-  /**
+  /*
    * -------------------------------------------------------------------
    * Namespaces
    * -------------------------------------------------------------------
@@ -30,26 +30,21 @@ class Autoload extends AutoloadConfig{
    * their location on the file system. These are used by the autoloader
    * to locate files the first time they have been instantiated.
    *
-   * The '/app' and '/system' directories are already mapped for you.
-   * you may change the name of the 'App' namespace if you wish,
+   * The 'Config' (APPPATH . 'Config') and 'CodeIgniter' (SYSTEMPATH) are
+   * already mapped for you.
+   *
+   * You may change the name of the 'App' namespace if you wish,
    * but this should be done prior to creating any namespaced classes,
    * else you will need to modify all of those classes for this to work.
    *
-   * Prototype:
-   *   $psr4 = [
-   *       'CodeIgniter' => SYSTEMPATH,
-   *       'App'         => APPPATH
-   *   ];
-   *
-   * @var array<string, array<int, string>|string>
-   * @phpstan-var array<string, string|list<string>>
+   * @var array<string, list<string>|string>
    */
   public $psr4 = [
-    APP_NAMESPACE => APPPATH, // For custom app namespace
-    'Config' => APPPATH.'Config',
+    APP_NAMESPACE => APPPATH,
+    'Smarty' => APPPATH.'ThirdParty/Smarty/src'
   ];
 
-  /**
+  /*
    * -------------------------------------------------------------------
    * Class Map
    * -------------------------------------------------------------------
@@ -66,11 +61,9 @@ class Autoload extends AutoloadConfig{
    *
    * @var array<string, string>
    */
-  public $classmap = [
-    'Smarty' => APPPATH.'ThirdParty/Smarty/Smarty.class.php'
-  ];
+  public $classmap = [];
 
-  /**
+  /*
    * -------------------------------------------------------------------
    * Files
    * -------------------------------------------------------------------
@@ -83,12 +76,11 @@ class Autoload extends AutoloadConfig{
    *       '/path/to/my/file.php',
    *   ];
    *
-   * @var string[]
-   * @phpstan-var list<string>
+   * @var list<string>
    */
   public $files = [];
 
-  /**
+  /*
    * -------------------------------------------------------------------
    * Helpers
    * -------------------------------------------------------------------
@@ -97,8 +89,8 @@ class Autoload extends AutoloadConfig{
    *       'form',
    *   ];
    *
-   * @var string[]
-   * @phpstan-var list<string>
+   * @var list<string>
    */
   public $helpers = [];
+
 }
